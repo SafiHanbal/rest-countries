@@ -4,17 +4,19 @@ export const state = {
     ['--color-background', '#f0f0f0'],
     ['--color-input', '#858585'],
     ['--color-text', '#111517'],
+    ['--color-shimmer', '#d4d4d4'],
   ]),
   darkModeColors: new Map([
     ['--color-element', '#2b3945'],
     ['--color-background', '#202c37'],
     ['--color-input', '#2b3945'],
     ['--color-text', '#fff'],
+    ['--color-shimmer', '#4a5d6d'],
   ]),
   countriesData: [],
   countryData: [],
   actions: [],
-  isDetailsActive: false,
+  curAction: 0,
 };
 
 export const fetchCountriesData = async function () {

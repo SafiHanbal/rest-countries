@@ -1,7 +1,6 @@
 import sprite from './../../images/sprite.svg';
 
 class mainCl {
-  #search = document.querySelector('.search');
   #main = document.querySelector('.main');
 
   #isDropdownActive = false;

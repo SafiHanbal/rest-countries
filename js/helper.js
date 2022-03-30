@@ -1,10 +1,9 @@
 import { state } from './model';
 
-export const helperAddAction = function (checkBoolean, actionData) {
-  state.actions.push({
-    checkBoolean: checkBoolean,
-    actionData: actionData,
-  });
+export const helperAddAction = function (actionData) {
+  state.actions.push(actionData);
+  state.curAction++;
+  console.log(state.curAction);
 };
 
 export const helperClearAction = function () {

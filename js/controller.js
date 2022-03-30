@@ -33,7 +33,10 @@ const controlCountryDetail = function (countryCode, saveData = true) {
     model.state.countriesData
   );
 
-  if (saveData) helperAddAction(true, model.state.countryData);
+  if (saveData) {
+    console.log(true);
+    helperAddAction(model.state.countryData);
+  }
 
   mainView.addHandlerBack(controlBack);
   mainView.addHandlerBorder(controlCountryDetail);
@@ -42,7 +45,7 @@ const controlCountryDetail = function (countryCode, saveData = true) {
 const controlInitialRender = async function (fetchData = true) {
   if (fetchData) {
     await model.fetchCountriesData();
-    helperAddAction(false, model.state.countriesData);
+    helperAddAction(model.state.countriesData);
   }
   mainView.renderInitial();
 
@@ -55,20 +58,20 @@ const controlInitialRender = async function (fetchData = true) {
 };
 
 function controlBack() {
-  console.log(model.state.actions, model.state.actions.length);
-  // removing last element of action
-  model.state.actions.pop();
   console.log(model.state.actions);
+  if (model.state.curAction <= 2) {
+    location.reload();
+  } else {
+    // removing last element of action
+    model.state.actions.pop();
 
-  const previousAction = model.state.actions[model.state.actions.length - 1];
-
-  if (previousAction?.checkBoolean) {
-    controlCountryDetail(previousAction.actionData.alpha3Code, false);
+    controlCountryDetail(
+      model.state.actions[model.state.curAction - 2].alpha3Code,
+      false
+    );
+    model.state.curAction--;
   }
-  if (!previousAction?.checkBoolean) {
-    controlInitialRender(false);
-  }
-  console.log(model.state.actions);
+  console.log(model.state.curAction);
 }
 
 const init = function () {

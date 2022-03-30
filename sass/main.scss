@@ -1,13 +1,16 @@
+@import 'abstract/animation';
 @import 'abstract/minxins';
 @import 'abstract/variable';
 
 @import 'base/base';
 @import 'base/typography';
 
+@import 'components/attribution';
 @import 'components/buttons';
 @import 'components/country';
 @import 'components/icons';
 @import 'components/search';
+@import 'components/shimmer';
 
 @import 'layout/country-detail';
 @import 'layout/header';

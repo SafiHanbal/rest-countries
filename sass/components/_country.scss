@@ -1,0 +1,21 @@
+.country {
+  background-color: var(--color-element);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.5rem rgba(var(--color-black-rgb), 0.1);
+  cursor: pointer;
+
+  &__flag {
+    width: 100%;
+    height: 15rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(var(--color-black-rgb), 0.1);
+
+    @include mediaQuery(sm-phone) {
+      height: 20rem;
+    }
+  }
+
+  &__description {
+    padding: 1rem 2rem 2rem;
+  }
+}

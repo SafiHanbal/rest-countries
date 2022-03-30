@@ -1,0 +1,28 @@
+.section-countries {
+  @include centerDiv;
+
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include mediaQuery(tab-land) {
+    padding: 0 4rem;
+  }
+
+  @include mediaQuery(tab-port) {
+    padding: 0 2rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mediaQuery(phone) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mediaQuery(sm-phone) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @include mediaQuery(big-desk) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "rest-contries-api",
+  "version": "1.0.0",
+  "description": "rest country api ",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Safi Hanbal",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.4.0",
+    "parcel": "^2.4.0"
+  }
+}
